@@ -1,16 +1,13 @@
 import PIL
 import random
 from PIL import ImageColor
-from PIL import Image 
+from PIL import Image
 
-class Display_map:
 
-    def __selfint__(self, elevation_list, image_name, height, width):
-        pass
 
-    with open("elevation_small.txt", 'r') as f:
-        all_elvations = [line.strip('\n').split() for line in f]
-    
+with open("elevation_small.txt", 'r') as f:
+   all_elvations = [line.strip('\n').split() for line in f]
+
 
 elevation_list = [[int(elevation ) for elevation in row] for row in all_elvations]
 
@@ -23,8 +20,8 @@ conv_to_rgb_values = [[int((elevation - little_min)/(big_max - little_min) * 255
 
 im = Image.new("RGB", (600, 600))
 for y, row in enumerate(conv_to_rgb_values):
-    for x, value, in enumerate(row):
-        im.putpixel((x, y), (value, value, value))
+   for x, value, in enumerate(row):
+       im.putpixel((x, y), (value, value, value))
 im.save('hmm.png')
 im.show('hmm.png')
 
