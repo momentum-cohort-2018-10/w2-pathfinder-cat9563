@@ -24,8 +24,21 @@ def display_map(list):
     for y, row in enumerate(conv_to_rgb_values):
         for x, value, in enumerate(row):
             im.putpixel((x, y), (value, value, value))
+            im.putpixel((x, 300), (0, 0, 200))
     im.save('map_image.png')
     im.show('map_image.png')
+
+print(display_map(list))
+
+# the next lines put a straight blue line vertically down the middle of the image
+
+# im = map_image.png
+# for x, row in enumerate(conv_to_rgb_values):
+#     im.putpixel((x, 300), (0, 0, 200))
+# im.save("map_veritcal_line.png")
+# im.show("map_vertical_line.png")
+
+
 
 # for tuple in 'map_image':
 #     display_map(conv_to_rgb_values).putpixel((tuple[0], tuple[1]), (255, 0, 0))
